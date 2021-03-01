@@ -1,0 +1,17 @@
+<header class="navbar-fixed">
+  <nav class="#455a64 blue-grey darken-2">
+    <div class="container nav-wrapper">
+      <%= link_to "Lacer", root_path, class: "brand-logo" %>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+      <% if user_signed_in? %>
+        <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to "Log in", new_user_session_path %></li>
+        <li><%= link_to "Registrazione", new_user_registration_path %></li>
+        
+      <% end %>
+      </ul>
+    </div>
+  </nav>
+</header>
